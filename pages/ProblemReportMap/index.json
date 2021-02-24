@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+    
+  },
+  "navigationBarTitleText": "新增问题上报选择事件类型"
+}

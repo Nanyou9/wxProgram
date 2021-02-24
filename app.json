@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/Login/index",
+    "pages/test/index",
+    "pages/ProblemReportEdit/index",
+    "pages/ProblemReport/index",
+    "pages/ProblemAccept/index",
+    "pages/ProblemReportAdd/index",
+    "pages/ProblemReportMap/index",
+    "pages/ProblemAcceptConfirm/index",
+    "pages/ProblemAcceptVerify/index",
+    "pages/ProblemConfirm/index",
+    "pages/ProblemConfirmCheck/index",
+    "pages/Mine/index"
+  ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "pages": [
+    "pages/SetCase/index",
+    "pages/ProcessingCase/index",
+    "pages/ProcessingCaseConfirm/index",
+    "pages/Inspection/index",
+    "pages/InspectionConfirm/index",
+    "pages/SetCaseConfirm/index",
+    "pages/Dispatch/index",
+    "pages/Check/index",
+    "pages/CheckConfirm/index",
+    "pages/DispatchConfirm/index",
+    "pages/Audit/index",
+    "pages/AuditConfirm/index",
+    "pages/CloseCase/index",
+    "pages/CloseCaseConfirm/index"
+      ]
+    }
+  ],
+  "window":{
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "北川智慧城管",
+    "navigationBarTextStyle":"black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

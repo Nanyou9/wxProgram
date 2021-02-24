@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="bg">
+<view class="container">
+  <view class="topnav">
+  <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.v3wall.com%2Fwallpaper%2F1920_1200%2F1502%2F1920_1200_201502121208421085462.jpg&refer=http%3A%2F%2Fwww.v3wall.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611460879&t=55b00dd83ed94e068de2b3858eb8c3a3"></image>
+  </view>
+  <view class="content">
+  <view class="grid">
+    <van-grid column-num="3" border="{{false}}">
+      <van-grid-item  url="/pages/ProblemReport/index" icon="service-o" badge="监督员" text="问题上报"  ></van-grid-item>
+      <van-grid-item url="/pages/ProblemAccept/index" icon="question-o" badge="受理员" text="问题受理"  ></van-grid-item>
+      <!--<van-grid-item icon="share-o" text="指派核实"  ></van-grid-item>-->
+      <van-grid-item url="/pages/ProblemConfirm/index" icon="notes-o" badge="监督员" text="问题核实"  ></van-grid-item>
+    </van-grid>
+  </view>
+  <view class="grid">
+    <van-grid column-num="3" border="{{false}}">
+      <van-grid-item url="/packageA/pages/SetCase/index" icon="bulb-o" text="立案"  badge="值班长" ></van-grid-item>
+      <van-grid-item url="/packageA/pages/Dispatch/index" icon="home-o" text="派遣" badge="派遣员" ></van-grid-item>
+      <van-grid-item url="/packageA/pages/Inspection/index" icon="manager-o" text="督查" badge="督察员" ></van-grid-item>
+    </van-grid>
+  </view>
+  <view class="grid">
+    <van-grid column-num="3" border="{{false}}">
+     <!-- <van-grid-item icon="orders-o" text="综合查询"  ></van-grid-item>-->
+     <van-grid-item url="/packageA/pages/ProcessingCase/index" icon="records" text="处理案件" badge="处理案件" ></van-grid-item>
+      <van-grid-item url="/packageA/pages/Check/index" icon="desktop-o" text="指派核查" badge="督察员" ></van-grid-item>
+      <van-grid-item url="/packageA/pages/Audit/index" icon="completed" text="核查" badge="监督员" ></van-grid-item>
+    </van-grid>
+  </view>
+  <view class="grid">
+    <van-grid column-num="3" border="{{false}}">
+    <van-grid-item url="/packageA/pages/CloseCase/index" icon="passed" text="结案" badge="值班长" ></van-grid-item>
+    </van-grid>
+  </view>
+  <!-- <view class="grid">
+    <van-grid column-num="3" border="{{false}}">
+      <van-grid-item icon="exchange" text="指派核查"  ></van-grid-item>
+    </van-grid>
+  </view> -->
+</view>
+
+</view>
+</view>
+<include src="/conpontent/footer/index.wxml"/>

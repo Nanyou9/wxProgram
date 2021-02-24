@@ -1,0 +1,89 @@
+<view class="topnav">
+  <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.bbra.cn%2F%28S%28acqhorrfgg350a55cu1mirya%29%29%2FUploadfiles%2Fimgs%2F2013%2F07%2F29%2Fcity1%2FXbzs_018.jpg&refer=http%3A%2F%2Fwww.bbra.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611825782&t=f2cc371176c7f880bc5d18ba9e87a07d"></image>
+  </view>
+
+<van-cell-group>
+  <van-field
+    value="{{ caseData.CASE_TITLE }}"
+    border="{{ false }}"
+    type="textarea"
+    autosize
+    label="案件标题:" 
+  />
+  <van-field
+    value=""
+    border="{{ false }}"
+    color="#49b113"
+    readonly="true"
+    placeholder-style="{{'color:'+color[caseData.Case_Frequency]}}"
+    placeholder="{{ Frequency[caseData.Case_Frequency] }}"
+    label="紧急程度:"
+  />
+  <van-field
+    value=""
+    border="{{ false }}"
+    placeholder-style="{{'color:'+caseData.color}}"
+    placeholder="{{ caseData.Status }}"
+    readonly="true"
+    label="问题状态:"
+  />
+  <van-field
+    value="{{ caseData.Ce_Min_Sub }}"
+    border="{{ false }}"
+    readonly="true"
+    type="textarea"
+    autosize
+    label="问题类型:"
+  />
+  <van-field
+    value="{{ caseData.Report_ADDR }}"
+    border="{{ false }}"
+    readonly="true"
+    type="textarea"
+    autosize
+    label="报案地址:"
+  />
+  <van-field
+    value="{{ caseData.CE_CASE_ON_NORM }}"
+    border="{{ false }}"
+    readonly="true"
+    type="textarea"
+    autosize
+    label="立案条件:"
+  />
+  <van-field
+    value="{{ caseData.REPORT_DETAIL}}"
+    border="{{ false }}"
+    readonly="true"
+    type="textarea"
+    autosize
+    label="案件详情:"
+  />
+  <van-field
+    value="{{ caseData.CASE_TIME_REPORT }}"
+    border="{{ false }}"
+    readonly="true"
+    label="报案时间:"
+  />
+  <van-field
+    value="{{ caseData.CASE_NO }}"
+    border="{{ false }}"
+    readonly="true"
+    label="报案编码:"
+  />
+  <van-collapse value="{{ activeNames }}" bind:change="Change">
+  <van-collapse-item title="选择指派核查员" name="1">
+    <van-radio-group value="{{ radio }}" wx:for-items="{{personData}}" wx:key="index" bind:change="choose">
+  <van-radio name="{{index}}">{{item.STAFF_NAME}} 在岗状态:{{item.STAFF_Status}} 联系电话:{{item.STAFF_TELNO}}</van-radio>
+</van-radio-group>
+  </van-collapse-item>
+</van-collapse>
+</van-cell-group>
+<view class="va"></view>
+<view class="submit" >
+<van-button  custom-class="but"disabled="{{radio=='a'}}" type="info" bindtap="toest"  bind:click="submit">核实问题上报</van-button>
+<van-button custom-class="but"  type="danger" bindtap="submit1" >无需核实问题上报</van-button>
+</view>
+<van-toast id="van-toast" />
+<van-notify id="van-notify" />
+<van-dialog id="van-dialog" />

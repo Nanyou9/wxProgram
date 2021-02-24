@@ -1,0 +1,31 @@
+<view class="bg">
+<view class="topnav">
+    <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.v3wall.com%2Fwallpaper%2F1920_1200%2F1502%2F1920_1200_201502121208421085462.jpg&refer=http%3A%2F%2Fwww.v3wall.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611460879&t=55b00dd83ed94e068de2b3858eb8c3a3"></image>
+</view>
+<view class="mine">
+<van-image
+  round
+  width="140rpx"
+  height="140rpx"
+  fit="cover"
+  src="/../images/person.png"
+/>
+<van-tag class="tag" round type="success">{{STAFF_POSITION}}</van-tag>
+<span style="position: absolute;top: 140rpx;font-weight: 550;font-size: 18px;left: 290rpx;">{{name}}</span>
+</view>
+<view class="content">
+    <view class="left">
+        <van-icon name="contact" color="#fff" size="80rpx" />
+        <view style="font-size: 24rpx;color: #fff;">待处理案件</view>
+    </view>
+    <view class="right">
+      <van-grid column-num="3" gutter="{{ 10 }}" border="{{false}}">
+      <van-grid-item  url="/pages/ProblemReport/index" icon="service-o" text="问题上报"  ></van-grid-item>
+      <van-grid-item url="/pages/ProblemAccept/index" icon="question-o" text="问题受理"  ></van-grid-item>
+      <!--<van-grid-item icon="share-o" text="指派核实"  ></van-grid-item>-->
+      <van-grid-item url="/pages/ProblemConfirm/index" icon="notes-o" text="问题核实"  ></van-grid-item>
+    </van-grid>
+    </view>
+</view>
+<van-button type="danger" class="exit" bindtap="exit" size="large" >退出登录</van-button>
+</view>

@@ -1,0 +1,16 @@
+
+<view class="va">
+  </view>
+<view class="footer">
+  <view class="tabber">
+  <view class="{{home}}" bindtap="home">
+    <van-icon name="wap-home-o" size="80rpx" color="{{colorh}}"/>
+   <p>首页</p>
+  </view>
+  <view class="{{me}}" bindtap="me">
+    <van-icon name="user-o" size="80rpx" color="{{colorm}}"/>
+    <p>我的</p>
+ </view>
+</view>
+
+</view>

@@ -1,0 +1,56 @@
+/* pages/ProblemReport/index.wxss */
+.top{
+    margin-top: -120rpx;
+    text-align: center;
+    height: 100%;
+    background:#d2d2d2;
+    z-index:999999;
+}
+.topnav image{
+    width: 90vw;
+    border-radius: 20rpx;
+    margin-left:5vw;
+    margin-top:20rpx;
+    height: 350rpx;
+}
+.bg{
+    background: #f3f2f2;
+    height:100%;
+    min-height: 100vh;
+}
+.bottom{
+    height: 100%;
+    bottom:0rpx;
+    text-align: center;
+}
+.bottom.content{
+    position: relative;
+    bottom:-10rpx;
+}
+.card{
+    margin-bottom:50rpx;
+    
+}
+.van-card{
+    border: 1px solid #d2d2d2;
+    border-radius: 20rpx !important;
+    box-shadow: 3px 3px 4px #c1c1c1;
+}
+.van-card__header{
+    min-height: 80rpx !important;
+    height: 80rpx !important;
+}
+.content1{
+    width: 90%;
+    margin-top: 20rpx;
+    margin-left: 5%;
+   
+}
+.add{
+    position: fixed;
+    bottom:80rpx;
+    right:20rpx;
+    background:#efefef;
+    border-radius: 200rpx;
+    border:0
+}

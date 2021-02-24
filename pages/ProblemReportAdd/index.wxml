@@ -1,0 +1,84 @@
+<view class="topnav">
+  <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.bbra.cn%2F%28S%28acqhorrfgg350a55cu1mirya%29%29%2FUploadfiles%2Fimgs%2F2013%2F07%2F29%2Fcity1%2FXbzs_018.jpg&refer=http%3A%2F%2Fwww.bbra.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611825782&t=f2cc371176c7f880bc5d18ba9e87a07d"></image>
+  </view>
+
+<van-cell-group>
+  <van-field
+    value="{{ title }}"
+    placeholder="请输入案件标题"
+    border="{{ false }}"
+    bind:change="title"
+    clearable="true"
+    label="案件标题:" 
+  />
+  <van-field
+    value="{{ desc }}"
+    bind:change="desc"
+    placeholder="请输入问题描述"
+    border="{{ false }}"
+    autosize
+    label="问题描述:" 
+    clearable="true"
+  ></van-field>
+  <van-field
+    value="{{ case }}"
+    placeholder="请输入立案条件"
+    border="{{ false }}"
+    bind:change="case"
+    label="立案条件:" 
+    clearable="true"
+  ></van-field>
+  <van-field
+    value="{{ site }}"
+    placeholder="请输入事发地点"
+    border="{{ false }}"
+    bind:change="site"
+    label="事发地点:" 
+    clearable="true"
+  ></van-field>
+  <van-cell title="请选择问题类型:" value="{{name}}" is-link bind:click="show" />
+  <van-cell title="请选择问题等级:" value="{{leve}}"  is-link bind:click="show1" />
+  <van-cell title="请选择紧急程度:" value="{{degree}}"  is-link bind:click="show2" />
+</van-cell-group>
+<van-button class="submit" disabled="{{disabled}}" size="large" type="primary" bindtap="submit">提交问题上报</van-button>
+<van-popup 
+  show="{{ show2 }}"
+  overlay="true"
+  position="bottom"
+  close-on-click-overlay="true"
+  custom-style="height: 40%">
+  <van-picker
+  show-toolbar
+  title="紧急程度"
+  columns="{{ columns2 }}"
+  bind:cancel="close2"
+  bind:confirm="confirm2"
+/>
+</van-popup>
+
+<van-popup 
+  show="{{ show1 }}"
+  overlay="true"
+  position="bottom"
+  close-on-click-overlay="true"
+  custom-style="height: 40%">
+  <van-picker
+  show-toolbar
+  title="问题等级"
+  columns="{{ columns1 }}"
+  bind:cancel="close1"
+  bind:confirm="confirm1"
+/>
+</van-popup>
+<van-popup
+  show="{{ show }}"
+  position="bottom"
+  custom-style="height: 40%"
+>
+<van-picker  
+  title="问题类型" columns="{{ columns }}" bind:cancel="close"
+  show-toolbar bind:confirm="map" bind:change="onChange" />
+</van-popup>
+<van-toast id="van-toast" />
+
+<van-notify id="van-notify" />

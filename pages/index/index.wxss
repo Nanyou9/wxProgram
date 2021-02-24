@@ -1,0 +1,39 @@
+/**index.wxss**/
+@import "/conpontent/footer/index.wxss";
+
+.bg{
+  background: #f3f2f2;
+  height:1400rpx;
+}
+.van-grid-item__content{
+  background: #f3f2f2 !important;
+}
+.van-info{
+  background-color:#1088ad !important;
+  box-shadow: 0px 1px 3px #545252;
+}
+.topnav image{
+  position: relative;
+  left: 0;
+  top:20rpx;
+  width:90vw;
+  border-radius: 20rpx;
+  height:350rpx;
+}
+.container{
+  padding:0;
+}
+.content{
+  position: absolute;
+  top: 360rpx;
+}
+.grid{
+  width:750rpx;
+  margin-top:100rpx;
+}
+van-grid-item{
+  margin-top: 20rpx;
+}
+.custom-class{
+  border:0;
+}

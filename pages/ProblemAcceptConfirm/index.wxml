@@ -1,0 +1,71 @@
+<view class="topnav">
+  <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.bbra.cn%2F%28S%28acqhorrfgg350a55cu1mirya%29%29%2FUploadfiles%2Fimgs%2F2013%2F07%2F29%2Fcity1%2FXbzs_018.jpg&refer=http%3A%2F%2Fwww.bbra.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611825782&t=f2cc371176c7f880bc5d18ba9e87a07d"></image>
+  </view>
+
+<van-cell-group>
+  <van-field
+    value="{{ caseData.CASE_TITLE }}"
+    border="{{ false }}"
+    type="textarea"
+    autosize
+    label="案件标题:" 
+  />
+  <van-field
+    value=""
+    border="{{ false }}"
+    color="#49b113"
+    readonly="true"
+    placeholder-style="{{'color:'+color[caseData.Case_Frequency]}}"
+    placeholder="{{ Frequency[caseData.Case_Frequency] }}"
+    label="紧急程度:"
+  />
+  <van-field
+    value=""
+    border="{{ false }}"
+    placeholder-style="{{'color:'+caseData.color}}"
+    placeholder="{{ caseData.Status }}"
+    readonly="true"
+    label="问题状态:"
+  />
+  <van-field
+    value="{{ caseData.Ce_Min_Sub }}"
+    border="{{ false }}"
+    readonly="true"
+    type="textarea"
+    autosize
+    label="问题类型:"
+  />
+c
+  <van-field
+    value="{{ caseData.CASE_TIME_REPORT }}"
+    border="{{ false }}"
+    readonly="true"
+    label="报案时间:"
+  />
+  <van-field
+    value="{{ caseData.CASE_NO }}"
+    border="{{ false }}"
+    readonly="true"
+    label="报案编码:"
+  />
+  <van-field
+    value="{{ Reason }}"
+    border="{{ false }}"
+    type="textarea"
+    placeholder="请输入不受理原因"
+    autosize
+    clearable="true"
+    bind:change="Reason"
+    label="不受理原因:"
+  />
+</van-cell-group>
+
+<view class="va"></view>
+<view class="ba"></view>
+<view class="submit">
+<van-button  custom-class="but" type="info"  bindtap="submit">提受理问题上报</van-button>
+<van-button custom-class="but" disabled="{{Reason==''}}" type="danger" bind:click="submit1" bindtap="toest">不受理问题上报</van-button>
+</view>
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+<van-notify id="van-notify" />

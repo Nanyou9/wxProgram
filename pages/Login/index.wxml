@@ -1,0 +1,23 @@
+<!--pages/Mine/index.wxml-->
+ <image style="position:fixed;width:100vw;height:100vh;z-index:1" src="../../images/1.jpg"></image>
+ <view class="content">
+    <image style="width:80%;height:100rpx" src="../../images/logo.png"></image>
+    <van-field
+    input-class="inpt"
+    value="{{ username }}"
+    clearable 
+    placeholder="请输入账号名称"
+    bind:change="onChange"
+  />
+  <van-field
+    input-class="inpt"
+    value="{{ password }}"
+    clearable 
+    password
+    placeholder="请输入密码"
+    bind:change="onChange1"
+  />
+  <van-button  custom-class="but" color="#c9c9c9" plain bindtap="submit">登录</van-button>
+ </view>
+ <van-toast id="van-toast" />
+

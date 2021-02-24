@@ -1,0 +1,17 @@
+/* pages/ProblemReportEdit/index.wxss */
+.text{
+    line-height: 32px;
+    
+}
+.submit{
+    position: fixed;
+    width: 100vw !important;
+    bottom:0
+}
+.topnav image{
+    width: 90vw;
+    border-radius: 20rpx;
+    margin-left:5vw;
+    margin-top:20rpx;
+    height: 350rpx;
+}

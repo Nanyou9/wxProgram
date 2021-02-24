@@ -1,0 +1,39 @@
+/* pages/ProblemAcceptConfirm/index.wxss *//* pages/ProblemReportEdit/index.wxss */
+.text{
+    line-height: 32px;
+    
+}
+.submit{
+    position: fixed;
+    width: 100vw !important;
+    bottom: 0;
+    z-index:999;
+}
+.but{
+    width: 50vw;
+}
+.topnav image{
+    width: 90vw;
+    border-radius: 20rpx;
+    margin-left:5vw;
+    margin-top:20rpx;
+    height: 350rpx;
+}
+.van-cell__title{
+    color:#646566
+  }
+.ba{
+    height:50px;
+    width:100vw;
+    bottom:0;
+    background-color: #fff;
+}
+.va{
+    position: fixed;
+    height:50px;
+    width:100vw;
+    bottom:0;
+    z-index:999;
+    background-color: #fff;
+
+}

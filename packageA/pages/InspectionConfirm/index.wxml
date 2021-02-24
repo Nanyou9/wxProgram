@@ -1,0 +1,248 @@
+<view class="bg">
+<view class="topnav">
+  <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.v3wall.com%2Fwallpaper%2F1920_1200%2F1502%2F1920_1200_201502121208421085462.jpg&refer=http%3A%2F%2Fwww.v3wall.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611460879&t=55b00dd83ed94e068de2b3858eb8c3a3"></image>
+  </view>
+  <van-tabs active="{{ active }}" bind:change="onChange"  swipeable animated>
+  <van-tab title="问题详情">
+  <view class="boxs" style="{{'border:1px solid' + color[editData.Case_Frequency]}}">
+  <van-cell-group >
+  <van-field
+    value="{{ editData.CASE_TITLE }}"
+    border="{{ false }}"
+    readonly="true"
+    label="案件标题:"
+  />
+  <van-field
+    value=""
+    border="{{ false }}"
+    color="#49b113"
+    readonly="true"
+    placeholder-style="{{'color:'+color[editData.Case_Frequency]}}"
+    placeholder="{{ Frequency[editData.Case_Frequency] }}"
+    label="紧急程度:"
+  />
+  <van-field
+    value=""
+    border="{{ false }}"
+    placeholder-style="{{'color:'+editData.color}}"
+    placeholder="{{ editData.Status }}"
+    readonly="true"
+    label="问题状态:"
+  />
+  <van-field
+    value="{{ type[editData.CE_TYPE] }}"
+    border="{{ false }}"
+    readonly="true"
+    label="问题类型:"
+  />
+  <van-field
+    value="{{ editData.Report_ADDR}}"
+    border="{{ false }}"
+    readonly="true"
+    type="textarea"
+    autosize
+    label="报案地址:"
+  />
+  <van-field
+    value="{{ editData.CE_CASE_ON_NORM }}"
+    border="{{ false }}"
+    readonly="true"
+    type="textarea"
+    autosize
+    label="立案条件:"
+  />
+  <van-field
+    value="{{ editData.REPORT_DETAIL}}"
+    border="{{ false }}"
+    readonly="true"
+    type="textarea"
+    autosize
+    label="案件详情:"
+  />
+  <van-field
+    value="{{ editData.CASE_TIME_REPORT }}"
+    border="{{ false }}"
+    readonly="true"
+    label="报案时间:"
+  />
+  <van-field
+    value="{{ editData.CASE_NO }}"
+    border="{{ false }}"
+    readonly="true"
+    label="报案编码:"
+  />
+  
+  <van-field
+    value="{{ editData.Case_Checker_Name }}"
+    border="{{ false }}"
+    readonly="true"
+    label="核实人:"
+  />
+  <van-field
+    value="{{ editData.Case_Accept_Name }}"
+    border="{{ false }}"
+    readonly="true"
+    label="受理人:"
+  />
+  <van-field
+    value="{{ editData.Case_Create_Name }}"
+    border="{{ false }}"
+    readonly="true"
+    label="值班长:"
+  />
+  <van-field
+    value="{{ editData.Case_Solve_DeptCode }}"
+    border="{{ false }}"
+    readonly="true"
+    label="处置部门:"
+  />
+  <van-field
+    value="{{ supervisereason }}"
+    border="{{ false }}"
+    type="textarea"
+    placeholder="请输入督办理由"
+    autosize
+    clearable="true"
+    bind:change="supervisereason"
+    label="督办理由:"
+  />
+  <van-field
+    value="{{ supervisesuggestion }}"
+    border="{{ false }}"
+    type="textarea"
+    placeholder="请输入督办建议"
+    autosize
+    clearable="true"
+    bind:change="supervisesuggestion"
+    label="督办建议:"
+  />
+</van-cell-group>
+
+
+</view>
+<view class="va"></view>
+<view class="submit" wx:if="{{active==0}}" >
+<van-button  square  color="#2ee800"   bind:click="submit" size="large">督办</van-button>
+
+</view>
+
+  </van-tab>
+  <van-tab title="查看案件附件">
+    <view >
+      <span style="color:#646566;font-weight:550;">所有文件:</span>
+      <br/>
+    <van-grid style="margin-top:10px" column-num="3" gutter="{{ 5 }}" border  center="true" >
+    <van-grid-item use-slot wx:for="{{ images }}" wx:for-item="item" wx:key="index">
+      <image
+        bindtap="showImages"
+        id="{{item.FilePath}}"
+        style="width: 90px; height: 90px;"
+        src="{{item.FilePath}}"
+      />
+      <span class="sl" style="max-width:100px">
+      {{item.FileFullName}}</span>
+    </van-grid-item>
+    <van-grid-item use-slot wx:for="{{ videos }}" wx:for-item="item" wx:key="index" >
+      <image
+        bindtap="playVideo" 
+        id="{{index}}"
+        style="width: 90px; height: 90px;"
+        src="../../../images/video.png"
+      />
+      <span class="sl" style="max-width:100px">
+      {{item.FileFullName}}</span>
+    </van-grid-item>
+    <van-grid-item use-slot wx:for="{{ others }}" wx:for-item="item"   wx:key="index">
+      <image
+        style="width: 90px; height: 90px;"
+        src="../../../images/other.png"
+      />
+      <span class="sl" style="max-width:100px">
+      {{item.FileFullName}}</span>
+    </van-grid-item>
+    </van-grid>
+    </view>
+    
+<i-load-more  tip="正在刷新" loading wx:if="{{!showbottom}}" />
+<i-load-more  tip="已经到底啦!" loading="{{false}}" wx:if="{{showbottom}}" />
+  </van-tab>
+  <van-tab title="查看核实附件">
+    <view >
+      <span style="color:#646566;font-weight:550;">所有文件:</span>
+      <br/>
+    <van-grid style="margin-top:10px" column-num="3" gutter="{{ 5 }}" border  center="true" >
+    <van-grid-item use-slot wx:for="{{ images1 }}" wx:for-item="item" wx:key="index">
+      <image
+        bindtap="showImages1"
+        id="{{item.FilePath}}"
+        style="width: 90px; height: 90px;"
+        src="{{item.FilePath}}"
+      />
+      <span class="sl" style="max-width:100px">
+      {{item.FileFullName}}</span>
+    </van-grid-item>
+    <van-grid-item use-slot wx:for="{{ videos1 }}" wx:for-item="item" wx:key="index" >
+      <image
+        bindtap="playVideo1" 
+        id="{{index}}"
+        style="width: 90px; height: 90px;"
+        src="../../../images/video.png"
+      />
+      <span class="sl" style="max-width:100px">
+      {{item.FileFullName}}</span>
+    </van-grid-item>
+    <van-grid-item use-slot wx:for="{{ others1 }}" wx:for-item="item"   wx:key="index">
+      <image
+        style="width: 90px; height: 90px;"
+        src="../../../images/other.png"
+      />
+      <span class="sl" style="max-width:100px">
+      {{item.FileFullName}}</span>
+    </van-grid-item>
+    </van-grid>
+    </view>
+    
+<i-load-more  tip="正在刷新" loading wx:if="{{!showbottom}}" />
+<i-load-more  tip="已经到底啦!" loading="{{false}}" wx:if="{{showbottom}}" />
+  </van-tab>
+</van-tabs>
+
+</view>
+<van-overlay show="{{ show }}" wx:if="{{show}}" bind:click="onClickHide" >
+  <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}" interval='{{interval}}' bindchange="bindchange"  circular="{{circular}}" style="height:{{imgheights[current]}}rpx;min-height:300rpx">
+    <swiper-item  wx:for="{{ images }}" wx:for-item="item">
+      <image
+        style="width:750rpx;height:{{height}}"
+        src="{{item.FilePath}}"
+        data-id='{{index}}'
+        mode="widthFix" bindload="imageLoad"
+        
+      />
+    </swiper-item>
+  </swiper>
+</van-overlay>
+<video
+   src="{{videourl}}" 
+   wx:if="{{play}}"
+   bindfullscreenchange="fullscreen"
+   id="videos"
+   controls
+   autoplay
+   show-fullscreen-btn="false"
+   title="{{videotitle}}"
+>
+</video>
+<video
+   src="{{videourl1}}" 
+   wx:if="{{play1}}"
+   bindfullscreenchange="fullscreen"
+   id="videos"
+   controls
+   autoplay
+   show-fullscreen-btn="false"
+   title="{{videotitle1}}"
+>
+</video>
+<van-dialog id="van-dialog" />
+<van-notify id="van-notify" />
+<van-toast id="van-toast" />

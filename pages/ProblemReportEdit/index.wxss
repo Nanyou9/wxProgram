@@ -1,0 +1,41 @@
+/* pages/ProblemReportEdit/index.wxss */
+.topnav image{
+    width: 90vw;
+    border-radius: 20rpx;
+    margin-left:5vw;
+    margin-top:20rpx;
+    height: 350rpx;
+}
+.delate{
+  position: relative;
+  right:-70rpx;
+  color:rgb(192, 16, 16);
+  top:-10rpx
+}
+.bg{
+  background: rgb(238, 238, 238);
+  height:100%;
+  min-height: 100vh;
+}
+.van-tabs__track{
+  margin-top:5px;
+  width:90vw !important;
+  margin-left:5vw;
+  
+  background:#f3f2f2;
+  
+}
+.van-cell__title{
+  color:#646566
+}
+van-tab{
+  padding-right:10vw
+}
+.boxs{
+  border-radius: 10px;
+}
+.upfile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

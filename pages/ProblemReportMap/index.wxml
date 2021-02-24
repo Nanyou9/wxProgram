@@ -1,0 +1,36 @@
+<!--pages/ProblemReportMap/index.wxml-->
+<van-dialog
+  title="选择地点"
+  show="{{ show }}"
+  message="是否选择此地点"
+  show-cancel-button
+  bind:confirm="confirm"
+  bind:cancel="close"
+>
+</van-dialog>
+<map 
+id="myMap"
+latitude="{{latitude}}" 
+longitude="{{longitude}}"
+markers="{{markers}}" 
+scale="10"
+bindmarkertap="selectMarket">
+  <cover-view slot="callout">
+    <cover-view marker-id="1"></cover-view>
+   
+    <cover-view marker-id="2"></cover-view>
+  </cover-view>
+  <cover-view>
+  
+  </cover-view>
+</map>
+
+<!-- <van-action-sheet
+    class="option"
+    show="{{ show }}"
+    actions="{{ actions }}"
+    bind:close="onClose"
+    bind:select="onSelect"
+  />   -->
+<van-notify id="van-notify" />
+ 

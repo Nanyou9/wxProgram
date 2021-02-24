@@ -1,0 +1,47 @@
+<view class="bg">
+<view class="topnav">
+  <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.bbra.cn%2F%28S%28acqhorrfgg350a55cu1mirya%29%29%2FUploadfiles%2Fimgs%2F2013%2F07%2F29%2Fcity1%2FXbzs_018.jpg&refer=http%3A%2F%2Fwww.bbra.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611825782&t=f2cc371176c7f880bc5d18ba9e87a07d"></image>
+  </view>
+
+
+<van-sticky>
+  <van-search
+  value="{{ value }}"
+  placeholder="请输入案件标题"
+  input-align="center"
+  bind:change="onChange"
+  background="#f3f2f2"
+  shape="round"
+  bind:clear="frushData"
+  bind:search="onSearch"
+/>
+</van-sticky>
+<view class="content1">
+<view class="card" wx:for-items="{{userData}}" wx:key="index" >
+    <van-card 
+    desc="{{item.REPORT_DETAIL}}" 
+    bottom="{{item.Report_NAME}}"
+    > 
+<view slot="title" >
+  <view style="font-size:14px;font-weight:550;max-width:130px !important;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{item.CASE_TITLE}}</view>
+  <span style="float:right;margin-top:-44rpx;color:{{item.color}}">处理状态:{{item.Status}}</span>
+</view>                                                                 
+  <view slot="footer">
+    <span>{{item.Report_NAME}}</span>
+  </view>
+  <view slot="footer">
+  <p>{{item.CASE_TIME_REPORT}}</p>
+  </view>
+  <view slot="footer">
+    <van-button type="primary" size="mini" bindtap="verify" id="{{index}}">核查</van-button>
+  </view>
+</van-card>
+</view>
+</view>
+<scroll-view class="bottom" wx:if="{{bottom}}">
+  <i-load-more tip="正在加载!" loading="true " wx:if="{{bottom}}"/>
+</scroll-view>
+<i-load-more  tip="已经到底啦!" loading="{{false}}" wx:if="{{!bottom}}" />
+</view>
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

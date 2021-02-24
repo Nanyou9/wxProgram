@@ -1,0 +1,26 @@
+.content{
+    position: fixed;
+    display: flex;
+    flex-direction:column;
+    width: 80vw;
+    height:60vh;
+    left:10vw;
+    top:30vh;
+    align-items:center;
+    z-index: 999;
+}
+
+.van-cell{
+    margin-top: 40rpx;
+    background: transparent !important;
+    width: 80vw !important;
+}
+.but{
+    margin-top:60rpx;
+    width:73vw !important;
+    background: transparent !important;
+}
+.van-field__input{
+    color:#fff !important;
+    font-size: 14px;
+}
